@@ -1,0 +1,17 @@
+[build]
+  command = "echo 'No build needed for static site'"
+  publish = "portfolio-site"
+  functions = "functions/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'self' https://cdn.tailwindcss.com https://images.pexels.com; script-src 'self' 'unsafe-inline'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
