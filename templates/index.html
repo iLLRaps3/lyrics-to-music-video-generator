@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-lg">
+        <h1 class="text-3xl font-bold mb-6 text-center">Generate Your Music Video</h1>
+        <form action="/" method="POST" enctype="multipart/form-data" class="space-y-6">
+            <div>
+                <label for="lyrics" class="block text-gray-700 font-semibold mb-2">Lyrics</label>
+                <textarea id="lyrics" name="lyrics" rows="4" required class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <div>
+                <label for="model" class="block text-gray-700 font-semibold mb-2">Model</label>
+                <select id="model" name="model" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="T2V-01-Director" selected>T2V-01-Director</option>
+                    <option value="S2V-01">S2V-01</option>
+                </select>
+            </div>
+            <div>
+                <label for="style" class="block text-gray-700 font-semibold mb-2">Style</label>
+                <select id="style" name="style" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="cinematic" selected>Cinematic</option>
+                    <option value="cartoon">Cartoon</option>
+                    <option value="realistic">Realistic</option>
+                </select>
+            </div>
+            <div>
+                <label for="camera" class="block text-gray-700 font-semibold mb-2">Camera</label>
+                <select id="camera" name="camera" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="medium_shot" selected>Medium Shot</option>
+                    <option value="close_up">Close Up</option>
+                    <option value="wide_shot">Wide Shot</option>
+                </select>
+            </div>
+            <div>
+                <label for="fx" class="block text-gray-700 font-semibold mb-2">Effects</label>
+                <select id="fx" name="fx" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="none" selected>None</option>
+                    <option value="glitch">Glitch</option>
+                    <option value="vhs">VHS</option>
+                </select>
+            </div>
+            <div>
+                <label for="cartoon_style" class="block text-gray-700 font-semibold mb-2">Cartoon Style (if applicable)</label>
+                <input type="text" id="cartoon_style" name="cartoon_style" placeholder="e.g. anime" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+            <div>
+                <label for="subject_ref" class="block text-gray-700 font-semibold mb-2">Subject Reference (optional)</label>
+                <input type="file" id="subject_ref" name="subject_ref" accept="image/*" class="w-full" />
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="checkbox" id="test_mode" name="test_mode" class="h-4 w-4 text-blue-600" />
+                <label for="test_mode" class="text-gray-700 font-semibold">Test Mode (2 clips only)</label>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700 transition">Generate Video</button>
+        </form>
+    </div>
+</body>
+</html>
