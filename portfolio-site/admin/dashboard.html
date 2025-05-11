@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iLL AI Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .sidebar {
+      transition: all 0.3s ease;
+    }
+    .chat-message {
+      max-width: 80%;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="sidebar bg-gray-800 text-white w-64 flex-shrink-0">
+      <div class="p-4 border-b border-gray-700">
+        <h1 class="text-xl font-bold">iLL AI Admin</h1>
+        <p class="text-gray-400 text-sm">Welcome back, Admin</p>
+      </div>
+      <nav class="p-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="flex items-center p-2 rounded-lg bg-gray-700">
+              <i class="fas fa-comment-alt mr-3"></i>
+              <span>Chat Assistant</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
+              <i class="fas fa-cog mr-3"></i>
+              <span>Site Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
+              <i class="fas fa-users mr-3"></i>
+              <span>User Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 rounded-lg hover:bg-gray-700">
+              <i class="fas fa-sign-out-alt mr-3"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Chat Header -->
+      <div class="bg-white border-b p-4">
+        <h2 class="text-xl font-semibold">Virtual Assistant</h2>
+      </div>
+      
+      <!-- Chat Messages -->
+      <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-4">
+        <!-- Messages will appear here -->
+      </div>
+      
+      <!-- Chat Input -->
+      <div class="bg-white border-t p-4">
+        <div class="flex items-center">
+          <input type="text" id="messageInput" 
+                 class="flex-1 border border-gray-300 rounded-l-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+                 placeholder="Type your message...">
+          <button id="sendButton" 
+                  class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-r-lg">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Chat functionality
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const chatMessages = document.getElementById('chatMessages');
+
+    function addMessage(content, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+      
+      const messageContent = document.createElement('div');
+      messageContent.className = `chat-message rounded-lg p-3 ${isUser ? 'bg-purple-600 text-white' : 'bg-gray-200'}`;
+      messageContent.textContent = content;
+      
+      messageDiv.appendChild(messageContent);
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    sendButton.addEventListener('click', () => {
+      const message = messageInput.value.trim();
+      if (message) {
+        addMessage(message, true);
+        messageInput.value = '';
+        
+        // Simulate assistant response
+        setTimeout(() => {
+          addMessage("I'm your AI assistant. How can I help you with the site today?", false);
+        }, 1000);
+      }
+    });
+
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+
+    // Initial greeting
+    addMessage("Hello! I'm your virtual assistant. How can I help you manage the iLL AI site today?", false);
+  </script>
+</body>
+</html>
