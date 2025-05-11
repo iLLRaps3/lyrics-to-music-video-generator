@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact iLL AI for professional AI music video production services. Get quotes, submit your music, and start your project today">
+  <meta property="og:title" content="Contact iLL AI - Music Video Production">
+  <meta property="og:description" content="Get in touch with our team to transform your music with AI-generated visuals">
+  <meta property="og:image" content="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg">
+  <meta property="og:url" content="https://ill-ai.netlify.app/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Contact | iLL AI Music Video Production</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/variables.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      padding-top: 4rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      transition: all 0.3s ease;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #3B82F6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Contact Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-4">Contact <span class="text-purple-500">iLL AI</span></h1>
+      <p class="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Ready to transform your music with AI visuals? Get in touch with our team.
+      </p>
+      
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Contact Form -->
+        <div class="lg:w-2/3">
+          <form id="contact-form" class="contact-form bg-white rounded-xl shadow-md p-8" netlify>
+            <div class="mb-6">
+              <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+              <input type="text" id="name" name="name" 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                     required>
+            </div>
+            
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+              <input type="email" id="email" name="email" 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                     required>
+            </div>
+            
+            <div class="mb-6">
+              <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+              <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="basic">Basic Video ($99)</option>
+                <option value="pro">Pro Video ($249)</option>
+                <option value="premium">Premium Video ($499)</option>
+                <option value="custom">Custom Project</option>
+              </select>
+            </div>
+            
+            <div class="mb-6">
+              <label for="song" class="block text-gray-700 font-medium mb-2">Song Details (if available)</label>
+              <input type="text" id="song" name="song" 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                     placeholder="Song title, genre, length">
+            </div>
+            
+            <div class="mb-6">
+              <label for="demo" class="block text-gray-700 font-medium mb-2">Upload Demo (optional)</label>
+              <div class="flex items-center justify-center w-full">
+                <label class="flex flex-col w-full border-2 border-dashed hover:border-purple-500 rounded-lg cursor-pointer transition duration-300">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                    <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                    <p class="text-sm text-gray-500">Click to upload or drag & drop</p>
+                    <p class="text-xs text-gray-400">MP3, WAV (Max 25MB)</p>
+                  </div>
+                  <input id="demo" name="demo" type="file" class="hidden" accept=".mp3,.wav,.aiff" />
+                </label>
+              </div>
+            </div>
+            
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none"
+                        required></textarea>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+                    id="submit-btn">
+              Send Message
+            </button>
+            
+            <div id="form-feedback" class="mt-6 text-center"></div>
+          </form>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="lg:w-1/3">
+          <div class="bg-white rounded-xl shadow-md p-8 h-full">
+            <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-map-marker-alt text-blue-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Location</h4>
+                  <p class="text-gray-600">San Francisco, CA</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-envelope text-blue-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Email</h4>
+                  <p class="text-gray-600">iLLaiservices@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-phone-alt text-blue-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Phone</h4>
+                  <p class="text-gray-600">7024829794</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                  <i class="fas fa-clock text-blue-500"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold">Working Hours</h4>
+                  <p class="text-gray-600">Mon-Fri: 9am - 5pm</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8">
+              <h4 class="font-semibold mb-4">Follow Me</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="bg-gray-100 hover:bg-blue-500 hover:text-white p-3 rounded-full transition duration-300">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="bg-gray-100 hover:bg-blue-500 hover:text-white p-3 rounded-full transition duration-300">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="bg-gray-100 hover:bg-blue-500 hover:text-white p-3 rounded-full transition duration-300">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="bg-gray-100 hover:bg-blue-500 hover:text-white p-3 rounded-full transition duration-300">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
+  <script>
+    // Load navigation
+    fetch('components/nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      });
+    
+    // Load footer
+    fetch('components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
